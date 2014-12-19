@@ -1,0 +1,13 @@
+[0710/225049:INFO:chromedriver_server.cc(76)] Handling request: /status 
+[0710/225049:INFO:chromedriver_server.cc(81)] Done handling request: 200 {"sessionId":"","status":0,"value":{"build":{"version":"alpha"},"os":{"arch":"x86","name":"Windows NT","version":"6.0"}}}
+[0710/225049:INFO:chromedriver_server.cc(76)] Handling request: /session {"desiredCapabilities":{"platform":"ANY","browserName":"chrome","chromeOptions":{"args":[],"extensions":[]},"version":"","chrome.switches":[]}}
+[0710/225049:INFO:chrome_launcher.cc(74)] Using chrome from C:\Program Files\Google\Chrome\Application\chrome.exe
+[0710/225055:INFO:chromedriver_server.cc(81)] Done handling request: 303 
+[0710/225055:INFO:chromedriver_server.cc(76)] Handling request: /session/4903570418ef0a4ccb5e8b02495b9c21 
+[0710/225055:INFO:chromedriver_server.cc(81)] Done handling request: 200 {"sessionId":"4903570418ef0a4ccb5e8b02495b9c21","status":0,"value":{"acceptSslCerts":true,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"browserName":"chrome","cssSelectorsEnabled":true,"databaseEnabled":true,"driverVersion":"0.8","handlesAlerts":true,"javascriptEnabled":true,"locationContextEnabled":true,"nativeEvents":true,"platform":"Windows NT","rotatable":false,"takesScreenshot":true,"version":"27.0.1453.116","webStorageEnabled":true}}
+[0710/225055:INFO:chromedriver_server.cc(76)] Handling request: /session/4903570418ef0a4ccb5e8b02495b9c21/window/current/maximize {"windowHandle":"current"}
+[0710/225113:INFO:chromedriver_server.cc(81)] Done handling request: 200 {"sessionId":"4903570418ef0a4ccb5e8b02495b9c21","status":13,"value":{"message":"unknown error: result was not received in 10 seconds\n  (Session info: chrome=27.0.1453.116)\n  (Driver info: chromedriver=0.8,platform=Windows NT 6.0 x86)"}}
+[0710/225115:INFO:chromedriver_server.cc(76)] Handling request: /session/4903570418ef0a4ccb5e8b02495b9c21 
+[0710/225119:INFO:chromedriver_server.cc(81)] Done handling request: 200 {"sessionId":"4903570418ef0a4ccb5e8b02495b9c21","status":0,"value":null}
+[0710/225119:INFO:chromedriver_server.cc(76)] Handling request: /shutdown 
+[0710/225119:INFO:chromedriver_server.cc(81)] Done handling request: 200 {"sessionId":"","status":0,"value":null}

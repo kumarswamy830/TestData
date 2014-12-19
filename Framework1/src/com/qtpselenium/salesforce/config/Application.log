@@ -1,0 +1,32 @@
+31/07/2013 01:09:47 devpinoyLogger MenuTest---openBrowser--------Browser----Pass
+31/07/2013 01:09:55 devpinoyLogger MenuTest---navigate--------testSiteURL----Pass
+31/07/2013 01:09:55 devpinoyLogger MenuTest---isElementPresent----solTab--------Pass
+31/07/2013 01:09:55 devpinoyLogger MenuTest---click----solTab--------Pass
+31/07/2013 01:10:18 devpinoyLogger MenuTest---navigate--------testSiteURL----Pass
+31/07/2013 01:10:41 devpinoyLogger MenuTest---waitForElementPresence----prodTab-------- Fail - Element not visible prodTab
+31/07/2013 01:10:46 devpinoyLogger MenuTest---click----prodTab--------Fail - Unable to click on - prodTab
+31/07/2013 01:10:47 devpinoyLogger MenuTest---navigate--------testSiteURL----Pass
+31/07/2013 01:10:56 devpinoyLogger MenuTest---isElementPresent----servTab--------Fail - Element not present  servTab
+31/07/2013 01:11:02 devpinoyLogger MenuTest---click----servTab--------Fail - Unable to click on - servTab
+31/07/2013 01:11:02 devpinoyLogger ********Starting of logintest************
+31/07/2013 01:11:09 devpinoyLogger LoginTest---openBrowser--------Browser----Pass
+31/07/2013 01:11:18 devpinoyLogger LoginTest---navigate--------testSiteURL----Pass
+31/07/2013 01:11:18 devpinoyLogger LoginTest---click----Loginlink--------Pass
+31/07/2013 01:11:21 devpinoyLogger LoginTest---input----username----Username----Pass
+31/07/2013 01:11:22 devpinoyLogger LoginTest---input----password----Password----Pass
+31/07/2013 01:11:23 devpinoyLogger LoginTest---click----loginbutton--------Pass
+31/07/2013 01:11:23 devpinoyLogger LoginTest---verifyLogin------------Pass
+31/07/2013 01:11:23 devpinoyLogger ******Ending logintest*********
+31/07/2013 01:11:23 devpinoyLogger ********Starting of logintest************
+31/07/2013 01:11:23 devpinoyLogger LoginTest---openBrowser--------Browser----Pass
+31/07/2013 01:11:23 devpinoyLogger LoginTest---navigate--------testSiteURL----Pass
+31/07/2013 01:11:43 devpinoyLogger LoginTest---click----Loginlink--------Pass
+31/07/2013 01:11:44 devpinoyLogger LoginTest---input----username----Username----Pass
+31/07/2013 01:11:45 devpinoyLogger LoginTest---input----password----Password----Pass
+31/07/2013 01:11:45 devpinoyLogger LoginTest---click----loginbutton--------Pass
+31/07/2013 01:11:53 devpinoyLogger LoginTest---verifyLogin------------Pass
+31/07/2013 01:11:53 devpinoyLogger ******Ending logintest*********
+31/07/2013 01:11:53 devpinoyLogger ********Starting of logintest************
+31/07/2013 01:11:53 devpinoyLogger Skipping logintest data iteration
+31/07/2013 01:11:53 devpinoyLogger ********Starting of logintest************
+31/07/2013 01:11:53 devpinoyLogger Skipping logintest data iteration
