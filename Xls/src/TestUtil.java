@@ -2,10 +2,12 @@
 
 import java.util.Hashtable;
 
+
+
 public class TestUtil {
 	
 	
-	public static Object[][] getData(String testCase,Xls_Reader xls){
+public static Object[][] getData(String testCase,Xls_Reader xls){
 		
 		//row on which test is lying
 		//rows of data
@@ -80,5 +82,51 @@ public class TestUtil {
 		}
 	
 	
+public static Object[][] getData1(String testCase,Xls_Reader xls){
+		
+		//row on which test is lying
+		//rows of data
+		//cols of data
+		//extract data
+		
+		//row on which test is lying
+		int testRowNum=1;
+		
+		while(!xls.getCellData("DataTest", 0, testRowNum).equals(testCase)){
+			
+			testRowNum++;
+			
+		}
+		
+		
+		
+		
 
+		 Object testData1[][]=new Object[1][1];
+		 
+		 Hashtable<String,String> table=new Hashtable<String,String>();
+		//extract data
+		
+		
+		for(int colNum=1;colNum<xls.getColumnCount("DataTest");colNum++){
+			
+			
+			
+			String key=xls.getCellData("DataTest", colNum, 1);
+			
+			String value=xls.getCellData("DataTest", colNum, testRowNum);
+			
+			table.put(key,value);
+			
+		}
+			
+			
+			testData1[0][0]=table;
+			
+		return testData1;
+		
+		}
+	
 }
+
+

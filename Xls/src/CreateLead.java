@@ -21,11 +21,16 @@ public class CreateLead {
 	public void leadTest(Hashtable<String,String> data){
 		
          
-		 System.out.print(data.get("Title")+"--");
-		 System.out.print(data.get("FirstName")+"--");
-		 System.out.print(data.get("LastName")+"--");
-		 System.out.print(data.get("Country")+"--");
-		 System.out.print(data.get("Status")+"--");
+		 System.out.print(data.get("DataO")+"--");
+		 System.out.print(data.get("DataT")+"--");
+		 System.out.print(data.get("DataF")+"--");
+		 
+//		 System.out.print(data.get("Title"));
+//		 System.out.print(data.get("FirstName"));
+//		 System.out.print(data.get("LastName"));
+//		 System.out.print(data.get("Country"));
+//		 System.out.print(data.get("Status"));
+//		
 		 
 		 System.out.println();
 		 
@@ -37,7 +42,9 @@ public class CreateLead {
 	
 	 public Object[][] getData(){
 		
-		return TestUtil.getData("CreateLead", xls);
+		//return TestUtil.getData("MM2", xls);
+		
+		return TestUtil.getData1("MM1", xls);
 		
 		
 	}  
