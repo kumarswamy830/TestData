@@ -126,6 +126,52 @@ public static Object[][] getData1(String testCase,Xls_Reader xls){
 		return testData1;
 		
 		}
+
+public static Object[][] getData_MM(String testCase,Xls_Reader xls){
+	
+	//row on which test is lying
+	//rows of data
+	//cols of data
+	//extract data
+	
+	//row on which test is lying
+	int testRowNum=1;
+	
+	while(!xls.getCellData("Web Transfer 5", 1, testRowNum).equals(testCase)){
+		
+		testRowNum++;
+		
+	}
+	
+	
+	
+	
+
+	 Object testData_MM[][]=new Object[1][1];
+	 
+	 Hashtable<String,String> table=new Hashtable<String,String>();
+	//extract data
+	
+	
+	for(int colNum=2;colNum<xls.getColumnCount("Web Transfer 5");colNum++){
+		
+		
+		
+		String key=xls.getCellData("Web Transfer 5", colNum, 5);
+		
+		String value=xls.getCellData("Web Transfer 5", colNum, testRowNum);
+		
+		table.put(key,value);
+		
+	}
+		
+		
+		testData_MM[0][0]=table;
+		
+	return testData_MM;
+	
+	}
+
 	
 }
 
