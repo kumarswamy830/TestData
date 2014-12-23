@@ -8,13 +8,13 @@ public class xclfile {
 		// TODO Auto-generated method stub
 		
 		
-             Xls_Reader x=new Xls_Reader("D:\\workspace\\WD-mod15\\src\\config\\Suite.xlsx");
+             Excel_Reader x=new Excel_Reader("D:\\workspace\\WD-mod15\\src\\config\\Suite.xlsx");
             System.out.println(isTestSuiteRunnable(x,"A Suite"));
              System.out.println(isTestSuiteRunnable(x,"B Suite"));
              System.out.println(isTestSuiteRunnable(x,"C Suite"));
            
 	}
-	     public static boolean isTestSuiteRunnable(Xls_Reader xls,String testSuiteName){
+	     public static boolean isTestSuiteRunnable(Excel_Reader xls,String testSuiteName){
 	    	  boolean isExecutable=false;
 	    	 
 	    	   for(int i=2;i<=xls.getRowCount("Test Suite");i++){
