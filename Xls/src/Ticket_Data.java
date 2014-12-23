@@ -18,7 +18,7 @@ public class Ticket_Data {
 	
 	 
 	 
-   Excel_Reader xls=new Excel_Reader("C:\\Users\\k.andapally.GDNINDIA\\git\\MM\\Xls\\src\\data\\TestData.xlsx");
+   Excel_Reader xls=new Excel_Reader(System.getProperty("user.dir")+"\\src\\data\\TestData.xlsx");
 	
     WebDriver driver=new FirefoxDriver();
     
