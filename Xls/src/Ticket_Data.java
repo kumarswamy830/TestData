@@ -7,7 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -17,17 +19,22 @@ import org.testng.annotations.Test;
 public class Ticket_Data {
 	
 	 
-	 
-   Excel_Reader xls=new Excel_Reader(System.getProperty("user.dir")+"\\src\\data\\TestData.xlsx");
+	
+	Excel_Reader xls=new Excel_Reader(System.getProperty("user.dir")+"\\Xls\\src\\data\\TestData.xlsx");
+   
 	
     WebDriver driver=new FirefoxDriver();
+    
+    int rowNum=0;
     
     
 	@Test(dataProvider="Test1")
 	public void testTickets(Hashtable<String,String> data){
 		
 		
+		try{
 		
+		//Excel_Reader xls=new Excel_Reader(System.getProperty("user.dir")+"\\Xls\\src\\data\\TestData.xlsx");
 		
         driver.get("https://wdw-latest.disney.go.com/");
       	
@@ -35,10 +42,10 @@ public class Ticket_Data {
       	
       	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
       	
+      	
+      	//Clicks on Parks&Tickets Tab
       	driver.findElement(By.xpath("//*[contains(@class,'gnbCategory gnbParksAndTickets')]/a")).click();
          
-      	
-      	
 	     //Select No.of Adults
       	 if(Integer.parseInt(data.get("Adult_Quantity"))>=0){
       		 
@@ -75,9 +82,9 @@ public class Ticket_Data {
       		  
       		switch (days)
             {
-             case 1 : System.out.println("Selected "+data.get("SingleDay")+ " Day Magic Kingdom park");
+             case 1 : System.out.println("Selected "+data.get("SingleDay")+ " Day Non-Magic Kingdom park");
                       break;
-             case 2 : System.out.println("Selected "+data.get("SingleDay")+ " Day Non-Magic Kingdom park");
+             case 2 : System.out.println("Selected "+data.get("SingleDay")+ " Day Magic Kingdom park");
                       break;
              default : System.out.println("Not Selected 1 day Ticket ");;
                       break;
@@ -157,6 +164,18 @@ public class Ticket_Data {
       		System.out.println("Total amount is not correct");
       	 }
       	 
+//      	  int rowNum=Integer.parseInt(data.get("rNum"));
+//      	 
+//      	  xls.setCellData("Data1", "Result", rowNum, "Pass");
+      	  
+		}catch(Exception e){
+			
+			System.out.println("Exception in Booking ticket: "+e.getMessage());
+			
+			// xls.setCellData("Data1", "Result", rowNum, "Fail");
+			 
+			 
+		}	 
 	}
      
 	@DataProvider(name="Test1")
@@ -172,6 +191,9 @@ public class Ticket_Data {
 		
 		
 	}
+	
+	
+	
 	
 	@AfterTest
 	public void closeBrowser(){

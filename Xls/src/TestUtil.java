@@ -132,7 +132,6 @@ public class TestUtil {
 
 		}
 
-		System.out.println("testRowNum: "+testRowNum);
 		// rows of data
 
 		int dataStartRowNum = testRowNum;
@@ -143,27 +142,33 @@ public class TestUtil {
 			rows++;
 
 		}
-		
-		System.out.println("rows: "+rows);
+
 
 		Object testData2[][] = new Object[rows][1];
 
 		int index = 0;
 
 		Hashtable<String, String> table = null;
+		
 		// extract data
+	
 
 		for (int rNum = dataStartRowNum; rNum < dataStartRowNum + rows; rNum++) {
 
 			table = new Hashtable<String, String>();
-
-			for (int colNum=1; colNum < xls.getColumnCount("Data1"); colNum++) {
+			
+			 String rowNum=Integer.toString(rNum);
+			
+			 table.put("rNum",rowNum);
+		
+			for (int colNum=1; colNum < xls.getColumnCount("Data1")-1; colNum++) {
 
 				String key = xls.getCellData("Data1", colNum, 1);
 
 				String value = xls.getCellData("Data1", colNum, rNum);
 
 				table.put(key, value);
+				
 			}
 			testData2[index][0] = table;
 			index++;
