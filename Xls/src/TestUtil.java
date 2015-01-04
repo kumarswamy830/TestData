@@ -1,7 +1,20 @@
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Hashtable;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
 public class TestUtil {
+	
+	private static SimpleDateFormat scrShot = new SimpleDateFormat("MMddyy_HHmmss");
+	private static String scrShotDir = new SimpleDateFormat("MMddyy").format(new Date());
+	private static String strScreenshotName = "";
 
 	public static Object[][] getData(String testCase, Excel_Reader xls) {
 
@@ -217,5 +230,43 @@ public class TestUtil {
 		return testData_MM;
 
 	}
+	
+public static void takeScreenShot(String Code,WebDriver webdriver,String page) {
+		
+		String name = System.getProperty("user.dir")+"\\ScreenShots\\GateChanges" ;
+		
+		createDir(name,"Application Name");
+		
+		name = name + "\\GateChanges_Execution_" + scrShotDir;
+		
+		createDir(name,"TimeStamp");
+		
+        name = name + "\\Product_" + Code;
+		
+		createDir(name,"Product Code");
+		
+		strScreenshotName = name + "\\" + page + "_" +  scrShot.format(new Date()) + ".png";
+
+		File f = ((TakesScreenshot) webdriver).getScreenshotAs(OutputType.FILE);
+
+		try {
+			FileUtils.copyFile(f, new File(strScreenshotName));
+		} catch (IOException ioe) {
+			System.out.println(ioe.getMessage());
+		}
+		//strScreenshotName = ". Screen Shot : " + strScreenshotName;
+	}
+
+public static void createDir(String dirName,String Message){
+	File f = new File(dirName);
+	try {
+		if (!f.exists()) {
+			f.mkdir();
+			System.out.println("Directory Created :: " + Message);
+		}
+	} catch (Throwable e) {
+		System.out.println("Unable to create directory with " + Message);
+	}
+}
 
 }

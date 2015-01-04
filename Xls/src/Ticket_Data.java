@@ -4,6 +4,7 @@ import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -20,7 +21,7 @@ public class Ticket_Data {
 	
 	 
 	
-	Excel_Reader xls=new Excel_Reader(System.getProperty("user.dir")+"\\Xls\\src\\data\\TestData.xlsx");
+	Excel_Reader xls=new Excel_Reader(System.getProperty("user.dir")+"\\src\\data\\TestData.xlsx");
    
 	
     WebDriver driver=new FirefoxDriver();
@@ -34,13 +35,15 @@ public class Ticket_Data {
 		
 		try{
 		
-		//Excel_Reader xls=new Excel_Reader(System.getProperty("user.dir")+"\\Xls\\src\\data\\TestData.xlsx");
+		Excel_Reader xls=new Excel_Reader(System.getProperty("user.dir")+"\\src\\data\\TestData.xlsx");
 		
         driver.get("https://wdw-latest.disney.go.com/");
       	
       	driver.manage().window().maximize();
       	
       	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      	
+      	TestUtil.takeScreenShot(data.get("Code"), driver, "Mainpage");
       	
       	
       	//Clicks on Parks&Tickets Tab
@@ -163,17 +166,12 @@ public class Ticket_Data {
       		 
       		System.out.println("Total amount is not correct");
       	 }
-      	 
-//      	  int rowNum=Integer.parseInt(data.get("rNum"));
-//      	 
-//      	  xls.setCellData("Data1", "Result", rowNum, "Pass");
+      	      	 
+      	   
       	  
 		}catch(Exception e){
 			
 			System.out.println("Exception in Booking ticket: "+e.getMessage());
-			
-			// xls.setCellData("Data1", "Result", rowNum, "Fail");
-			 
 			 
 		}	 
 	}
@@ -191,6 +189,7 @@ public class Ticket_Data {
 		
 		
 	}
+	
 	
 	
 	
