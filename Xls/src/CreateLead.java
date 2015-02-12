@@ -21,7 +21,8 @@ public class CreateLead {
 	public void leadTest(Hashtable<String,String> data){
 		
          
-		 System.out.print(data.get("DataO")+"--");
+		 //System.out.print(data.get("Data6")+"--");
+		System.out.print("Sample code");
 		 System.out.print(data.get("DataT")+"--");
 		 System.out.print(data.get("DataF")+"--");
 		 
